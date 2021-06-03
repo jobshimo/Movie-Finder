@@ -12,6 +12,7 @@ app.factory("Movies", [
             data: [],
             totalResults: 0,
             endPage: 0,
+            notFound: false,
         };
 
         self.search = function(textSearch, page) {
@@ -21,7 +22,7 @@ app.factory("Movies", [
         self.getMovies = function(textSearch, page) {
             self.loading = true;
             var q = $q.defer();
-            if (!textSearch) textSearch = "king";
+            if (!textSearch) textSearch = "star wars";
 
             $http
                 .get(
@@ -32,6 +33,7 @@ app.factory("Movies", [
                 )
                 .then(
                     function success(response) {
+                        console.log(response);
                         q.resolve(response.data);
                     },
                     function error(reject) {
@@ -45,6 +47,8 @@ app.factory("Movies", [
             $rootScope.promise = self.getMovies(textSearch, page);
             $rootScope.promise.then(
                 function(data) {
+                    if (data.Error === "Movie not found!" || data.Error === "Too many results.") self.notFound = true;
+                    else self.notFound = false;
                     self.loading = false;
                     self.ok = true;
                     self.msg = "success";
@@ -52,7 +56,7 @@ app.factory("Movies", [
                     self.totalResults = parseInt(data.totalResults, 10);
                     self.totalResults % 10 != 0 ?
                         (self.endPage = Math.trunc(self.totalResults / 10) + 1) :
-                        (self.endPage = Movies.totalResults);
+                        (self.endPage = Math.trunc(self.totalResults / 10));
                 },
                 function(error) {
                     self.loading = false;

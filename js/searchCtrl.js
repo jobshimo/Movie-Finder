@@ -4,7 +4,11 @@ app.controller("searchCtrl", [
     function($scope, Movies) {
         $scope.setActive("nSearch");
         $scope.movies = Movies;
-        $scope.textSearch;
+        $scope.textSearch = '';
+        $scope.lengthCheck = function() {
+            if ($scope.textSearch.length === 0) return true
+            else return false
+        }
         $scope.page = 1;
         $scope.endPage;
         Movies.totalResults % 10 != 0 ?
@@ -17,6 +21,12 @@ app.controller("searchCtrl", [
         $scope.search = function() {
             $scope.page = 1;
             Movies.search($scope.textSearch, $scope.page);
+        };
+        $scope.cleanFilter = function() {
+            if ($scope.textSearch.length === 0) {
+                $scope.page = 1;
+                Movies.search($scope.textSearch, $scope.page);
+            }
         };
         $scope.firstPage = function() {
             $scope.page = 1;
@@ -34,7 +44,6 @@ app.controller("searchCtrl", [
                 ($scope.endPage = Movies.totalResults);
             $scope.page++;
             Movies.search($scope.textSearch, $scope.page);
-            console.log(Math.trunc(Movies.totalResults / 10));
         };
         $scope.pageDown = function() {
             if ($scope.page === 1) return;
