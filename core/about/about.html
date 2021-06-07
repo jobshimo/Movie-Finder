@@ -1,5 +1,40 @@
-<div>
-    <p>
-        about
-    </p>
+<div class="container pt-2">
+    <div class="row">
+        <h2 class="text-center mt-2">Información</h2>
+
+        <p>Esta es una app de demostración, realizada con fines didácticos. Ha sido creada utilizando las tecnologías que se relacionan en el apartado Tecnologías y dependencias. La API que se está consumiendo para la carga de las películas procede de
+            <a href="https://www.omdbapi.com/" target="_blank">www.omdbapi.com</a>.
+        </p>
+
+        <h3>Descripción del proyecto:</h3>
+        <p>El objeto del proyecto es poner en prácticas los conocimientos adquiridos con el framework AngularJS en su versión v1.8.2. Pese a ser una tecnología ya en desuso, poco práctica y con graves problemas de seguridad en algunos entornos, actualmente
+            hay empresas que aún la utilizan. Por ese motivo decidí adquirir conocimientos para comprender la estructura de esta herramienta.
+        </p>
+        <p>
+            La navegación entre componentes se realiza, mediante un enrutado(config.js). A su vez, la clase "active" en los botones del navBar se establecen dinámicamente al realizar el movimiento entre componentes invocando al método setActive().
+        </p>
+        <p>El buscador consta de un input donde el usuario introduce el campo de texto que desea buscar y un botón para realizar la acción. La información procedente de la API se obtiene mediante promesas (service.js) para dar un mejor resultado de cara
+            al usuario, empleando un log de carga cunado no hay información disponible para mostrar debido a que esta aún no ha llegado. Sí la búsqueda no obtiene resultados, se cargará un mensaje al usuario y se ocultarán los botones de paginación de
+            la parte inferior. Sí la búsqueda ha tenido resultados se mostraran en forma de cards con la imagen correspondiente y en caso de que la información retornada no disponga de imagen se añade una "NO-IMAGE" por defecto. La barra de paginación
+            permite al usuario moverse entre páginas, además de informarle en que página se encuentra y cuantas páginas hay.
+
+        </p>
+        <p>
+            La app esta creada de forma responsiva y con adaptación a dispositivos
+
+        </p>
+        <p>La app consta de una barra de navegación en la parte superior con botones de acceso a las diferentes secciones que la componen. Y de un footer en la parte inferior solo informativo.</p>
+
+        <h3>Tecnologías y dependencias:</h3>
+        <div class="ms-2">
+
+            <ul>
+                <li><a href="https://angularjs.org/" target="_blank">AngulasJS 1.8.2</a></li>
+                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap 5.0.1</a></li>
+                <li><a href="https://animate.style/" target="_blank">animate.css 4.1.1</a></li>
+                <li><a href="https://www.omdbapi.com/" target="_blank">OMDb API</a></li>
+            </ul>
+        </div>
+        <h2>Creado por <a href="">Martín Bernal</a></h2>
+    </div>
 </div>

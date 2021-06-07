@@ -2,26 +2,27 @@
 
 This project was generated with [AngularJS](https://angularjs.org/) version v1.8.2.
 
-<!-- ## Development server
+## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In VSC index.html "Open with Live Server.
 
-## Code scaffolding
+## Descripcion
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El objeto del proyecto es poner en prácticas los conocimientos adquiridos con el framework AngularJS en su versión v1.8.2. Pese a ser una tecnología ya en desuso, poco práctica y con graves problemas de seguridad en algunos entornos, actualmente hay empresas que aún la utilizan. Por ese motivo decidí adquirir conocimientos para comprender la estructura de esta herramienta.
 
-## Build
+La navegación entre componentes se realiza, mediante un enrutado(config.js). A su vez, la clase "active" en los botones del navBar se establecen dinámicamente al realizar el movimiento entre componentes invocando al método setActive().
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+El buscador consta de un input donde el usuario introduce el campo de texto que desea buscar y un botón para realizar la acción. La información procedente de la API se obtiene mediante promesas (service.js) para dar un mejor resultado de cara al usuario, empleando un log de carga cunado no hay información disponible para mostrar debido a que esta aún no ha llegado. Sí la búsqueda no obtiene resultados, se cargará un mensaje al usuario y se ocultarán los botones de paginación de la parte inferior. Sí la búsqueda ha tenido resultados se mostraran en forma de cards con la imagen correspondiente y en caso de que la información retornada no disponga de imagen se añade una "NO-IMAGE" por defecto. La barra de paginación permite al usuario moverse entre páginas, además de informarle en que página se encuentra y cuantas páginas hay.
 
-## Running unit tests
+La app esta creada de forma responsiva y con adaptación a dispositivos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La app consta de una barra de navegación en la parte superior con botones de acceso a las diferentes secciones que la componen. Y de un footer en la parte inferior solo informativo.
 
-## Running end-to-end tests
+## Tecnologías
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+AngularJS 1.8.2
+Bootstrap 5.0.1
+animate.css 4.1.1
+OMDb API
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md). -->

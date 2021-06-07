@@ -56,13 +56,30 @@ section {
 
 .paginatorButtonCustom {
     color: white !important;
-    background-color: #e91e63 !important;
-    border-color: #e91e63 !important;
+    background-color: #e91e6336 !important;
 }
 
 .paginatorButtonCustom:hover {
-    background-color: #e91e63bf !important;
-    border-color: #e91e63bf !important;
+    background-color: #c75d80bf !important;
+}
+
+.disabledCustom {
+    color: gray !important;
+}
+
+.disabledCustom:hover {
+    color: gray !important;
+    background-color: #e91e6336 !important;
+    cursor: default;
+}
+
+.centerPage {
+    border: 1px solid #888585 !important;
+    border-left: 1px solid #dee2e6 !important;
+    background-color: #e91e63 !important;
+    color: #ffffff !important;
+    cursor: default !important;
+    border-right: 1px solid #dee2e6 !important;
 }
 
 .shadowCustom {

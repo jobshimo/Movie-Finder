@@ -19,7 +19,7 @@
     <div class="" ng-hide="movies.loading">
 
 
-        <div ng-hide="movies.loading" class="row row-cols-1 row-cols-md-5 g-5 mb-3">
+        <div ng-hide="movies.loading" class="row row-cols-1 row-cols-md-5 g-4 mb-3">
             <div ng-repeat="movie in movies.data">
                 <div class="col animate__animated animate__fadeIn animate__faster">
                     <div class="card h-100 shadowCustom cursor">
@@ -35,21 +35,21 @@
         <div class="showCustom pageCustom"> Página {{page}} de {{movies.endPage}}</div>
         <nav ng-hide="movies.loading || movies.notFound " class="mt-3" ng-show="!movies.notFound" aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-                <li ng-class="{'disabled' : page === 1}" class="cursor page-item shadowPaginator">
-                    <a class="paginatorButtonCustom page-link" ng-click="firstPage()">Primera </a>
+                <li class="cursor page-item shadowPaginator">
+                    <a ng-class="{'disabledCustom' : page === 1}" class="paginatorButtonCustom page-link" ng-click="firstPage()">Primera </a>
                 </li>
-                <li ng-class="{'disabled' : page === 1}" class="cursor page-item shadowPaginator">
-                    <a class="paginatorButtonCustom page-link" ng-click="pageDown()">Anterior</a>
+                <li class="cursor page-item shadowPaginator">
+                    <a ng-class="{'disabledCustom' : page === 1}" class="paginatorButtonCustom page-link" ng-click="pageDown()">Anterior</a>
                 </li>
-                <li class=" hideCustom disabled page-item shadowPaginator">
-                    <a class="paginatorButtonCustom page-link"> Página {{page}} de {{movies.endPage}}</a>
+                <li class=" hideCustom  page-item shadowPaginator">
+                    <a class=" centerPage page-link"> Página {{page}} de {{movies.endPage}}</a>
                 </li>
-                <li ng-class="{'disabled' : page === movies.endPage}" class="cursor page-item shadowPaginator">
-                    <a class="paginatorButtonCustom page-link" ng-click="pageUp()">Siguiente</a>
+                <li class="cursor page-item shadowPaginator">
+                    <a ng-class="{'disabledCustom' : page === movies.endPage}" class="paginatorButtonCustom page-link" ng-click="pageUp()">Siguiente</a>
                 </li>
 
-                <li ng-class="{'disabled' : page === movies.endPage}" class=" cursor page-item shadowPaginator">
-                    <a class="paginatorButtonCustom page-link" ng-click="finalPage(movies.endPage)">Última</a>
+                <li class=" cursor page-item shadowPaginator">
+                    <a ng-class="{'disabledCustom' : page === movies.endPage}" class="paginatorButtonCustom page-link" ng-click="finalPage(movies.endPage)">Última</a>
                 </li>
             </ul>
         </nav>

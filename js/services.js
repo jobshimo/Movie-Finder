@@ -33,7 +33,6 @@ app.factory("Movies", [
                 )
                 .then(
                     function success(response) {
-                        console.log(response);
                         q.resolve(response.data);
                     },
                     function error(reject) {
