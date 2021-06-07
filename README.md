@@ -21,8 +21,11 @@ La app consta de una barra de navegación en la parte superior con botones de ac
 ## Tecnologías
 
 AngularJS 1.8.2
+
 Bootstrap 5.0.1
+
 animate.css 4.1.1
+
 OMDb API
 
 
